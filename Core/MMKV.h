@@ -51,7 +51,6 @@ enum MMKVMode : uint32_t {
 
 class MMKV {
 #ifndef MMKV_ANDROID
-    std::string m_mmapKey;
     MMKV(const std::string &mmapID, MMKVMode mode, std::string *cryptKey, MMKVPath_t *rootPath, size_t expectedCapacity = 0);
 #else // defined(MMKV_ANDROID)
     mmkv::FileLock *m_fileModeLock;
@@ -65,6 +64,7 @@ class MMKV {
 
     ~MMKV();
 
+    std::string m_mmapKey;
     std::string m_mmapID;
     MMKVPath_t m_path;
     MMKVPath_t m_crcPath;
