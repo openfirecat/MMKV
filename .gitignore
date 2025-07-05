@@ -49,3 +49,6 @@ dist/
 
 #Android Studio
 .cxx
+
+#output
+output/
